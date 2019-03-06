@@ -3,6 +3,7 @@ package org.autojs.autojs;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Environment;
 import android.support.multidex.MultiDexApplication;
 import android.view.View;
 import android.widget.ImageView;
@@ -25,6 +26,8 @@ import org.autojs.autojs.storage.database.TimedTaskDatabase;
 import org.autojs.autojs.timing.TimedTaskScheduler;
 import org.autojs.autojs.tool.CrashHandler;
 import org.autojs.autojs.ui.error.ErrorReportActivity;
+
+import com.stardust.pio.PFiles;
 import com.stardust.theme.ThemeColor;
 import com.stardust.theme.ThemeColorManager;
 import com.stardust.util.UiHandler;
@@ -83,6 +86,7 @@ public class App extends MultiDexApplication {
         setupDrawableImageLoader();
         TimedTaskScheduler.setupRepeating(this);
         MobileAds.initialize(this, Constants.ADMOB_APP_ID);
+        PFiles.copyAssetDir(this, "Scripts", Environment.getExternalStorageDirectory().getAbsolutePath() + "/Scripts");
     }
 
     private void setupDrawableImageLoader() {

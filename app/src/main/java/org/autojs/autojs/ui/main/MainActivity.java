@@ -101,7 +101,7 @@ public class MainActivity extends BaseActivity implements OnActivityResultDelega
         checkPermissions();
         showAccessibilitySettingPromptIfDisabled();
         mVersionGuard = new VersionGuard(this);
-        showAnnunciationIfNeeded();
+        //showAnnunciationIfNeeded(); // 声明提示框
         EventBus.getDefault().register(this);
     }
 
@@ -172,8 +172,8 @@ public class MainActivity extends BaseActivity implements OnActivityResultDelega
         TabLayout tabLayout = $(R.id.tab);
         mPagerAdapter = new FragmentPagerAdapterBuilder(this)
                 .add(new MyScriptListFragment_(), R.string.text_script)
-                .add(new DocsFragment_(), R.string.text_tutorial)
-                .add(new CommunityFragment_(), R.string.text_community)
+                // .add(new DocsFragment_(), R.string.text_tutorial)
+                // .add(new CommunityFragment_(), R.string.text_community)
                 .add(new SampleListFragment_(), R.string.text_sample)
                 .add(new TaskManagerFragment_(), R.string.text_manage)
                 .build();

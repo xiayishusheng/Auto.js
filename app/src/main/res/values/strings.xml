@@ -357,6 +357,6 @@
     <string name="text_skip">跳过</string>
     <string name="text_change_script_dir">更改脚本文件夹路径</string>
     <string name="key_script_dir_path">key_script_dir_path</string>
-    <string name="default_value_script_dir_path">/脚本/</string>
+    <string name="default_value_script_dir_path">/Scripts/</string>
     <string name="text_error_copy_file" formatted="true">发生错误: %s</string>
 </resources>
